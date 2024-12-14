@@ -1,0 +1,128 @@
+---
+title: 'Building a Complete App - VideoGPTAI'
+description: 'Step-by-step guide to creating a production-ready mobile app using Cades AI'
+---
+
+## Overview
+
+Learn how to build a complete, production-ready mobile app using Cades, the world's first AI mobile app developer. This tutorial will walk you through creating VideoGPTAI, a video creation app that's currently live on app stores.
+
+<Note>
+  Before starting, make sure you have a Firebase account and basic understanding of development concepts.
+</Note>
+
+## Initial Setup
+
+### Step 1: Designing with Cades
+
+First, describe your app idea to Cades and let it generate the initial screens. For VideoGPTAI, the following screens were created:
+
+- Home Screen (template selection)
+- Library Screen (user's videos)
+- Review Screen (video preview)
+- Settings Screen (user profile)
+- Login Screen (authentication)
+
+Click on the `Finalize Designs & Generate Code` button to generate the code for your mobile app.
+
+### Step 2: Understanding the Code Structure
+
+<Card title="Understanding Generated Code Structure" icon="folder-tree">
+```
+lib/
+├── common/
+│   ├── constants.dart
+├── main.dart
+├── pages/
+│   ├── home_screen.dart
+│   ├── library_screen.dart
+│   ├── login_screen.dart
+│   ├── onboarding_screen.dart
+│   ├── review_video_screen.dart
+│   └── settings_screen.dart
+└── styles/
+    └── theme.dart
+```
+</Card>
+
+When you generate code from your designs, you get a complete Flutter project structured in a way that's easy to work with. In the `lib` folder, we have these main parts:
+- **common**: This folder contains shared elements like app constants, which are used throughout the app to maintain consistency and avoid hardcoding values.
+- **pages**: This folder contains all our screen designs. Each screen is represented by a Dart file, making it easy to manage and update individual screens.
+- **styles**: This folder includes our theme file, which keeps all our design choices consistent across the app. It defines colors, fonts, and other styling elements.
+- **main.dart**: This is the entry point of the app, where all the components are connected and the app is initialized.
+
+Now that we understand the structure, let's start updating our app...
+
+### Step 3: Basic Project Configuration
+
+Configure your app's identity with the following prompt:
+
+<Note>
+  The project package name should match with the name of the android app in firebase console. In this case, it is `com.videogptai.android`.
+</Note>
+
+```bash
+Change the name and description of the project in pubspec, and update all imports in main.dart and use the change_app_package_name to update it
+name in pubspec should be in lowercase and underscore
+
+My project name is "videogptai"
+Description: "AI-powered video creation app"
+My project package name will be "com.videogptai.android"
+```
+
+## Firebase Integration
+
+### Step 1: Firebase Project Setup
+
+<Steps>
+  1. Create a new Firebase project at [Firebase Console](https://console.firebase.google.com)
+  2. Add an Android app with your package name (Used `com.videogptai.android` in this example)
+  3. Download the `google-services.json` file
+</Steps>
+
+### Step 2: Firebase Configuration
+
+Use this prompt to integrate Firebase:
+
+```bash
+Integrate firebase into the project
+```
+
+When prompted, paste your `google-services.json` file contents into the chat.
+
+### Step 3: Authentication Setup
+
+Let's install the social_auth_btn_kit package to add pre-styled authentication buttons for a professional look:
+
+```bash
+flutter pub add social_auth_btn_kit
+```
+Now prompt the following to add google sign in functionality:
+
+```bash
+Create a login page for my app, it should have google sign in for now, add the methods in auth service for google sign in
+the login page should have the name of the app in center and then the google sign in button is used from social_auth_btn_kit package add the google sign btn reference
+<example_auth_button>
+SocialAuthBtn.facebook(
+                variant: FacebookTypeVariants.outlined,
+                onPressed: () {
+                  debugPrint("DEBUG: Facebook Btn Pressed");
+                },
+              ),
+<example_auth_button>
+```
+### Step 4: Settings Page
+
+Let's create a settings page, which will display the user's profile information and provide a logout option. This page will be accessible from the home screen and give users control over their account settings.
+
+```bash
+Create a settings page and link it with the home page and give the logout option and show the current user details in the settings page for now
+```
+
+### Step 5: Loading State
+
+Let's create a loading state for the app to provide visual feedback during authentication:
+
+```bash
+In the login page show loading when google sign in is tapped and then when sign in is complete redirect to onboarding page, check logic on main.dart
+```

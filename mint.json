@@ -7,23 +7,23 @@
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#7E22CE",
+    "light": "#6FEFF1",
+    "dark": "#7E22CE",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#7E22CE",
+      "to": "#6FEFF1"
     }
   },
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:hello@cades.dev"
     }
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://cades.dev/home"
   },
   "tabs": [
     {
@@ -33,59 +33,37 @@
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "name": "Discord",
+      "icon": "gamepad",
+      "url": "https://discord.gg/EQyvdS5gGj"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "WhatsApp",
+      "icon": "whatsapp",
+      "url": "https://chat.whatsapp.com/EbDj7Txf9VR0GrICAFpjRk"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Introduction",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "welcome",
+        "faq",
+        "pricing"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "User Guides",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "videogptai-tutorial"
       ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "website": "https://cades.dev",
+    "x": "https://cades.dev/x",
+    "linkedin": "https://linkedin.com/company/cades-dev",
+    "facebook": "https://www.facebook.com/profile.php?id=61568894284260",
+    "youtube": "https://www.youtube.com/@cades-dev"
   }
 }
