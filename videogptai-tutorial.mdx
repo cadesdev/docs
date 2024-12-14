@@ -15,7 +15,19 @@ Learn how to build a complete, production-ready mobile app using Cades, the worl
 
 ### Step 1: Designing with Cades
 
-First, describe your app idea to Cades and let it generate the initial screens. For VideoGPTAI, the following screens were created:
+First, describe your app idea to Cades and let it generate the initial screens.
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+For VideoGPTAI, the following screens were created:
 
 - Home Screen (template selection)
 - Library Screen (user's videos)
@@ -45,6 +57,16 @@ lib/
 ```
 </Card>
 
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
 When you generate code from your designs, you get a complete Flutter project structured in a way that's easy to work with. In the `lib` folder, we have these main parts:
 - **common**: This folder contains shared elements like app constants, which are used throughout the app to maintain consistency and avoid hardcoding values.
 - **pages**: This folder contains all our screen designs. Each screen is represented by a Dart file, making it easy to manage and update individual screens.
@@ -61,6 +83,16 @@ Configure your app's identity with the following prompt:
   The project package name should match with the name of the android app in firebase console. In this case, it is `com.videogptai.android`.
 </Note>
 
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
 ```bash
 Change the name and description of the project in pubspec, and update all imports in main.dart and use the change_app_package_name to update it
 name in pubspec should be in lowercase and underscore
@@ -70,27 +102,19 @@ Description: "AI-powered video creation app"
 My project package name will be "com.videogptai.android"
 ```
 
-## Firebase Integration
+## Adding Authentication
 
-### Step 1: Firebase Project Setup
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
-<Steps>
-  1. Create a new Firebase project at [Firebase Console](https://console.firebase.google.com)
-  2. Add an Android app with your package name (Used `com.videogptai.android` in this example)
-  3. Download the `google-services.json` file
-</Steps>
-
-### Step 2: Firebase Configuration
-
-Use this prompt to integrate Firebase:
-
-```bash
-Integrate firebase into the project
-```
-
-When prompted, paste your `google-services.json` file contents into the chat.
-
-### Step 3: Authentication Setup
+### Step 1: Authentication Setup
 
 Let's install the social_auth_btn_kit package to add pre-styled authentication buttons for a professional look:
 
@@ -111,7 +135,7 @@ SocialAuthBtn.facebook(
               ),
 <example_auth_button>
 ```
-### Step 4: Settings Page
+### Step 2: Settings Page
 
 Let's create a settings page, which will display the user's profile information and provide a logout option. This page will be accessible from the home screen and give users control over their account settings.
 
@@ -119,10 +143,394 @@ Let's create a settings page, which will display the user's profile information 
 Create a settings page and link it with the home page and give the logout option and show the current user details in the settings page for now
 ```
 
-### Step 5: Loading State
+### Step 3: Loading State
 
 Let's create a loading state for the app to provide visual feedback during authentication:
 
 ```bash
 In the login page show loading when google sign in is tapped and then when sign in is complete redirect to onboarding page, check logic on main.dart
 ```
+
+## Adding go_router Navigation
+
+Using this prompt We were able to migrate the navigation stack of the project, to better manage any redirections for login checks, we want to protect pages that shouldn't be accessible to user without login
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+```bash
+Integrate go_router package for my app migrate all navigation to go_router
+```
+
+Add a simple redirect logic to the onboarding screen
+```bash
+In login screen when login is successful you need to go to the onboarding screen
+```
+
+## Integrating Firebase
+### Step 1: Firebase Project Setup
+
+<Steps>
+  1. Create a new Firebase project at [Firebase Console](https://console.firebase.google.com)
+  2. Add an Android app with your package name (Used `com.videogptai.android` in this example)
+  3. Download the `google-services.json` file
+</Steps>
+
+### Step 2: Firebase Configuration
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+Use this prompt to integrate Firebase:
+
+```bash
+Integrate firebase into the project
+```
+
+When prompted, paste your `google-services.json` file contents into the chat.
+
+## Refactoring Components
+
+```bash
+Extract the template card in a seperate file for refactor save it in a components folder
+```
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+## API Integration
+
+### Step 1: Network Layer Setup
+Let's create a dependency injection folder using get_it package to manage API instances and follow clean architecture principles. This centralized approach helps avoid duplicating API instances across the codebase.
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+```bash
+in the di folder /injection.dart Use get_it to setup the dependency injection graph of the project and call this in the main function for now import dio for network calls and set it up as a singleton dependency
+```
+
+### Step 2: API Client Configuration
+
+After setting up Dio and dependency injection, we'll create a centralized API client class to handle all network requests efficiently and maintain clean architecture principles.
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+```bash
+I want to integrate api into the app use retrofit to do the same
+my base api url is 'https://api.videogptai.com/api' setup the retrofit class in api folder inject the api in the injection file in di use the singleton dio
+```
+
+### Step 3: First API Integration
+Let's now integrate our first API, with this prompt:
+<AccordionGroup>
+<Accordion title="Integrate Templates API">
+```bash
+Integrate GET https://api.videogptai.com/api/en/video/getTemplates
+Integrate in the home page with templates
+the sample response is as follows
+```
+</Accordion>
+<Accordion title="Sample Response">
+```json
+{
+    "success": true,
+    "payload": {
+        "data": [
+            {
+                "id": "random",
+                "locale": "en",
+                "name": "Random",
+                "rank": 1,
+                "require_input": false,
+                "style": {
+                    "id": "sai-line-art",
+                    "name": "Line Art"
+                },
+                "url": "https://storage.videogptai.com/videogpt/assets/images/template-random.webp",
+                "voice": {
+                    "id": 41,
+                    "name": "Ava"
+                }
+            },
+            {
+                "id": "interestingfacts",
+                "locale": "en",
+                "name": "Interesting Facts",
+                "rank": 2,
+                "require_input": false,
+                "style": {
+                    "id": "sai-comic-book",
+                    "name": "Comic Book"
+                },
+                "url": "https://storage.videogptai.com/videogpt/assets/images/template-interestingfacts.webp",
+                "voice": {
+                    "id": 41,
+                    "name": "Ava"
+                }
+            }
+        ]
+    }
+}
+```
+</Accordion>
+</AccordionGroup>
+
+### Step 4: Authentication Header Setup
+
+Add authentication to API requests.
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+```bash
+I want to create a dio interceptor that if logged in it will add the user token in the authorization header for requests as Bearer
+```
+
+### Step 5: Second API Integration
+
+<AccordionGroup>
+<Accordion title="Library API">
+```bash
+Now in the library screen integrate the api GET https://api.videogptai.com/api/user/getVideos
+here is the sample reponse
+```
+</Accordion>
+<Accordion title="Sample Response">
+```json
+{
+    "success": true,
+    "payload": {
+        "videos": [
+            {
+                "videoId": "q0mrw0uccl",
+                "templateId": "random",
+                "voiceId": "41",
+                "styleId": "sai-line-art",
+                "createdAt": "2024-12-04T08:57:45.490Z",
+                "previewUrl": "https://preview.videogptai.com/preview/wq0j8UijymNlI3cfqxyrhnsLK6p2/q0mrw0uccl",
+                "state": "DRAFT",
+                "locale": "en",
+                "captionStyleId": "white-highlight",
+                "thumbnail": "https://storage.videogptai.com/videogpt/assets/images/thumbnail-q0mrw0uccl.webp",
+                "musicId": "nomusic",
+                "transitionsIdList": [
+                    "fade"
+                ],
+                "animationsIdList": [
+                    "zoom",
+                    "pan"
+                ],
+                "voice": {
+                    "gender": "female",
+                    "id": 41,
+                    "locale": "en",
+                    "model_id": "en-US",
+                    "name": "Ava",
+                    "rank": 2,
+                    "url": "https://storage.googleapis.com/jetshorts/data/voices/en-US-Neural2-G.wav",
+                    "voice_id": "en-US-Neural2-G"
+                },
+                "style": {
+                    "id": "sai-line-art",
+                    "locale": "en",
+                    "name": "Line Art",
+                    "negative_prompt": "anime, photorealistic, 35mm film, deformed, glitch, blurry, noisy, off-center, deformed, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, mutated, realism, realistic, impressionism, expressionism, oil, acrylic",
+                    "prompt": "line art drawing {prompt} . professional, sleek, modern, minimalist, graphic, line art, vector graphics",
+                    "rank": 17,
+                    "url": "https://storage.videogptai.com/videogpt/assets/images/style-sai-line-art.webp"
+                },
+                "music": {
+                    "id": "nomusic",
+                    "locale": "en",
+                    "name": "No Music",
+                    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/videogptai-3bb74.appspot.com/o/videogpt%2Fdata%2Fmusic%2Fsilence.mp3?alt=media&token=b8c934e5-5bea-4188-b5ef-fc9ffb108c50",
+                    "rank": 12,
+                    "url": "https://firebasestorage.googleapis.com/v0/b/videogptai-3bb74.appspot.com/o/videogpt%2Fdata%2Fmusic%2Fsilence.mp3?alt=media&token=b8c934e5-5bea-4188-b5ef-fc9ffb108c50"
+                },
+                "caption": {
+                    "id": "white-highlight",
+                    "locale": "en",
+                    "name": "White Highlight",
+                    "rank": 1,
+                    "url": "https://firebasestorage.googleapis.com/v0/b/videogptai-3bb74.appspot.com/o/videogpt%2Fassets%2Fimages%2Fwhite-highlight.webp?alt=media&token=794dd9f3-2f99-418b-a9d6-e57663959925"
+                },
+                "transition": [],
+                "animation": []
+            },
+            {
+                "videoId": "h0yxxrejy2",
+                "templateId": "horrorstory",
+                "voiceId": "30",
+                "styleId": "sai-texture",
+                "createdAt": "2024-07-18T16:09:48.455Z",
+                "previewUrl": "https://preview.videogptai.com/preview/wq0j8UijymNlI3cfqxyrhnsLK6p2/h0yxxrejy2",
+                "state": "DRAFT",
+                "locale": "en",
+                "captionStyleId": "simple",
+                "thumbnail": "https://storage.videogptai.com/videogpt/assets/images/thumbnail-h0yxxrejy2.webp",
+                "musicId": "calm-1",
+                "transitionsIdList": [
+                    "zoomIn"
+                ],
+                "animationsIdList": [
+                    "pan"
+                ],
+                "voice": {
+                    "gender": "male",
+                    "id": 30,
+                    "locale": "en",
+                    "model_id": "en-US",
+                    "name": "James",
+                    "url": "https://storage.videogptai.com/videogpt/data/audio/vfkuf7gr2n0fhy79uqtruznw92m15xym.mp3",
+                    "voice_id": "en-US-Polyglot-1"
+                },
+                "style": {
+                    "id": "sai-texture",
+                    "locale": "en",
+                    "name": "Texture",
+                    "negative_prompt": "ugly, deformed, noisy, blurry",
+                    "prompt": "texture {prompt} top down close-up",
+                    "url": "https://storage.videogptai.com/videogpt/assets/images/style-sai-texture.webp"
+                },
+                "music": {
+                    "id": "calm-1",
+                    "locale": "en",
+                    "name": "Calm",
+                    "url": "https://storage.googleapis.com/jetshorts/data/music/calm.m4a"
+                },
+                "caption": {
+                    "id": "simple",
+                    "locale": "en",
+                    "name": "Simple",
+                    "url": "https://mathiasbynens.be/demo/animated-webp-supported.webp"
+                },
+                "transition": [],
+                "animation": []
+            }
+        ],
+        "offset": "2024-07-15T08:02:03.941Z"
+    }
+}
+```
+</Accordion>
+</AccordionGroup>
+
+This will integrate the library api for the videos user has created with the existing UI.
+
+### Step 6: Repeat the same for all APIs
+Repeat the same process to integrate all the APIs.
+<Tip>
+  You can use the same prompt for all the APIs, just change the api url and the sample response.
+</Tip>
+
+Ask Cades to create buttons, pages, sheets, drawers, etc. based on the design you have in mind, and add functionality to them.
+
+## Adding RevenueCat
+Integrating RevenueCat into your app allows you to manage in-app purchases and subscriptions efficiently.
+
+<Info>
+Initial Setup:
+  - Sign up at RevenueCat and create a new project
+  - Define your in-app products and subscription offerings in the RevenueCat dashboard. Ensure these match the products set up in your Google Play and Apple App Store accounts
+  - Obtain the API keys for your project from the RevenueCat dashboard. You'll need these to configure the SDK in your app
+</Info>
+
+Integrate subscription functionality:
+
+```bash
+Integrate revenue cat in the project, here are the api keys..
+```
+Continue chatting with Cades to add the subscription flow to the app.
+
+## Testing and Deployment
+
+<AccordionGroup>
+  <Accordion icon="mobile" title="Testing">
+    Test your app thoroughly on both Android and iOS devices:
+    - Authentication flow
+    - Video creation process
+    - Subscription purchase flow
+    - Error handling
+  </Accordion>
+
+  <Accordion icon="rocket" title="Deployment">
+    1. Prepare store listings
+    2. Generate release builds
+    3. Submit to app stores
+    4. Monitor initial user feedback
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup>
+  <Card title="Customize UI" icon="paintbrush">
+    Refine your app's visual design and user experience
+  </Card>
+
+  <Card title="Add Features" icon="plus">
+    Integrate additional APIs and functionality
+  </Card>
+
+  <Card title="Optimize" icon="gauge">
+    Improve app performance and user experience
+  </Card>
+
+  <Card title="Monitor" icon="chart-line">
+    Track usage and gather user feedback
+  </Card>
+</CardGroup>
+
+## Resources
+
+<CardGroup>
+  <Card title="Play Store" icon="mobile" href="https://play.google.com/store/apps/details?id=com.videogptai.android">
+    Check out VideoGPTAI on the Play Store
+  </Card>
+  <Card title="App Store" icon="mobile" href="https://apps.apple.com/ae/app/videogptai-create-ai-videos/id6532617360">
+    Check out VideoGPTAI on the App Store
+  </Card>
+</CardGroup>
