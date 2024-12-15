@@ -1,0 +1,96 @@
+---
+title: 'Design and Code Structure'
+description: 'Learn how to set up and understand the code structure of VideoGPTAI'
+---
+## Initial Setup
+
+### Step 1: Designing with Cades
+
+First, describe your app idea to Cades and let it generate the initial screens.
+
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/bEcuUsLhPww"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+
+
+For VideoGPTAI, the following screens were created:
+
+- Home Screen (template selection)
+- Library Screen (user's videos)
+- Review Screen (video preview)
+- Settings Screen (user profile)
+- Login Screen (authentication)
+
+Click on the `Finalize Designs & Generate Code` button to generate the code for your mobile app.
+
+### Step 2: Understanding the Code Structure
+
+<Card title="Understanding Generated Code Structure" icon="folder-tree">
+```
+lib/
+├── common/
+│   ├── constants.dart
+├── main.dart
+├── pages/
+│   ├── home_screen.dart
+│   ├── library_screen.dart
+│   ├── login_screen.dart
+│   ├── onboarding_screen.dart
+│   ├── review_video_screen.dart
+│   └── settings_screen.dart
+└── styles/
+    └── theme.dart
+```
+</Card>
+
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/_AsM44UIIPk"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+When you generate code from your designs, you get a complete Flutter project structured in a way that's easy to work with. In the `lib` folder, we have these main parts:
+- **common**: This folder contains shared elements like app constants, which are used throughout the app to maintain consistency and avoid hardcoding values.
+- **pages**: This folder contains all our screen designs. Each screen is represented by a Dart file, making it easy to manage and update individual screens.
+- **styles**: This folder includes our theme file, which keeps all our design choices consistent across the app. It defines colors, fonts, and other styling elements.
+- **main.dart**: This is the entry point of the app, where all the components are connected and the app is initialized.
+
+Now that we understand the structure, let's start updating our app...
+
+### Step 3: Basic Project Configuration
+
+Configure your app's identity with the following prompt:
+
+<Note>
+  The project package name should match with the name of the android app in firebase console. In this case, it is `com.videogptai.android`.
+</Note>
+
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/yKzrjRHxSmc"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+```bash
+Change the name and description of the project in pubspec, and update all imports in main.dart and use the change_app_package_name to update it
+name in pubspec should be in lowercase and underscore
+
+My project name is "videogptai"
+Description: "AI-powered video creation app"
+My project package name will be "com.videogptai.android"
+```

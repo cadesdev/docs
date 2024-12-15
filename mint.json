@@ -53,11 +53,23 @@
       ]
     },
     {
-      "group": "User Guides",
-      "pages": [
-        "videogptai-tutorial"
-      ]
-    }
+        "group": "User Guide",
+        "pages": [
+          {
+            "icon": "video",
+            "group": "Building a Complete App - VideoGPTAI",
+            "pages": [
+              "videogptai-tutorial/introduction",
+              "videogptai-tutorial/design-and-code-structure",
+              "videogptai-tutorial/authentication-and-navigation",
+              "videogptai-tutorial/firebase-integration",
+              "videogptai-tutorial/api-integration",
+              "videogptai-tutorial/revenuecat-and-ui-customization",
+              "videogptai-tutorial/testing-deployment-next-steps"
+            ]
+          }
+        ]
+      }
   ],
   "footerSocials": {
     "website": "https://cades.dev",
@@ -65,5 +77,34 @@
     "linkedin": "https://linkedin.com/company/cades-dev",
     "facebook": "https://www.facebook.com/profile.php?id=61568894284260",
     "youtube": "https://www.youtube.com/@cades-dev"
+  },
+  "footer": {
+    "socials": {
+      "website": "https://cades.dev",
+      "x": "https://cades.dev/x",
+      "linkedin": "https://linkedin.com/company/cades-dev",
+      "facebook": "https://www.facebook.com/profile.php?id=61568894284260",
+      "youtube": "https://www.youtube.com/@cades-dev"
+    },
+    "links": [
+        {
+            "title": "Legal",
+            "links": [
+              {
+                "label": "Privacy Policy",
+                "url": "https://cades.dev/privacy"
+              },
+              {
+                "label": "Terms of Service",
+                "url": "https://cades.dev/terms"
+              }
+            ]
+        }
+    ]
+  },
+  "analytics": {
+    "ga4": {
+        "measurementId": "G-9Q9RQ9MDJH"
+    }
   }
 }

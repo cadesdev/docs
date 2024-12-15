@@ -1,0 +1,246 @@
+---
+title: 'API Integration'
+description: 'Learn how to integrate API into VideoGPTAI'
+---
+
+## API Integration
+
+### Step 1: Network Layer Setup
+Let's create a dependency injection folder using get_it package to manage API instances and follow clean architecture principles. This centralized approach helps avoid duplicating API instances across the codebase.
+
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/_S66lX8d_s0"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+```bash
+in the di folder /injection.dart Use get_it to setup the dependency injection graph of the project and call this in the main function for now import dio for network calls and set it up as a singleton dependency
+```
+
+### Step 2: API Client Configuration
+
+After setting up Dio and dependency injection, we'll create a centralized API client class to handle all network requests efficiently and maintain clean architecture principles.
+
+```bash
+I want to integrate api into the app use retrofit to do the same
+my base api url is 'https://api.videogptai.com/api' setup the retrofit class in api folder inject the api in the injection file in di use the singleton dio
+```
+
+### Step 3: First API Integration
+Let's now integrate our first API, with this prompt:
+<AccordionGroup>
+<Accordion title="Integrate Templates API">
+```bash
+Integrate GET https://api.videogptai.com/api/en/video/getTemplates
+Integrate in the home page with templates
+the sample response is as follows
+```
+</Accordion>
+<Accordion title="Sample Response">
+```json
+{
+    "success": true,
+    "payload": {
+        "data": [
+            {
+                "id": "random",
+                "locale": "en",
+                "name": "Random",
+                "rank": 1,
+                "require_input": false,
+                "style": {
+                    "id": "sai-line-art",
+                    "name": "Line Art"
+                },
+                "url": "https://storage.videogptai.com/videogpt/assets/images/template-random.webp",
+                "voice": {
+                    "id": 41,
+                    "name": "Ava"
+                }
+            },
+            {
+                "id": "interestingfacts",
+                "locale": "en",
+                "name": "Interesting Facts",
+                "rank": 2,
+                "require_input": false,
+                "style": {
+                    "id": "sai-comic-book",
+                    "name": "Comic Book"
+                },
+                "url": "https://storage.videogptai.com/videogpt/assets/images/template-interestingfacts.webp",
+                "voice": {
+                    "id": 41,
+                    "name": "Ava"
+                }
+            }
+        ]
+    }
+}
+```
+</Accordion>
+</AccordionGroup>
+
+### Step 4: Authentication Header Setup
+
+Add authentication to API requests.
+
+```bash
+I want to create a dio interceptor that if logged in it will add the user token in the authorization header for requests as Bearer
+```
+
+### Step 5: Second API Integration
+
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/XDYcQk6iv-g"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+<br />
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/9JKJFwMx7YQ"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+<br />
+<AccordionGroup>
+<Accordion title="Library API">
+```bash
+Now in the library screen integrate the api GET https://api.videogptai.com/api/user/getVideos
+here is the sample reponse
+```
+</Accordion>
+<Accordion title="Sample Response">
+```json
+{
+    "success": true,
+    "payload": {
+        "videos": [
+            {
+                "videoId": "q0mrw0uccl",
+                "templateId": "random",
+                "voiceId": "41",
+                "styleId": "sai-line-art",
+                "createdAt": "2024-12-04T08:57:45.490Z",
+                "previewUrl": "https://preview.videogptai.com/preview/wq0j8UijymNlI3cfqxyrhnsLK6p2/q0mrw0uccl",
+                "state": "DRAFT",
+                "locale": "en",
+                "captionStyleId": "white-highlight",
+                "thumbnail": "https://storage.videogptai.com/videogpt/assets/images/thumbnail-q0mrw0uccl.webp",
+                "musicId": "nomusic",
+                "transitionsIdList": [
+                    "fade"
+                ],
+                "animationsIdList": [
+                    "zoom",
+                    "pan"
+                ],
+                "voice": {
+                    "gender": "female",
+                    "id": 41,
+                    "locale": "en",
+                    "model_id": "en-US",
+                    "name": "Ava",
+                    "rank": 2,
+                    "url": "https://storage.googleapis.com/jetshorts/data/voices/en-US-Neural2-G.wav",
+                    "voice_id": "en-US-Neural2-G"
+                },
+                "style": {
+                    "id": "sai-line-art",
+                    "locale": "en",
+                    "name": "Line Art",
+                    "negative_prompt": "anime, photorealistic, 35mm film, deformed, glitch, blurry, noisy, off-center, deformed, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, mutated, realism, realistic, impressionism, expressionism, oil, acrylic",
+                    "prompt": "line art drawing {prompt} . professional, sleek, modern, minimalist, graphic, line art, vector graphics",
+                    "rank": 17,
+                    "url": "https://storage.videogptai.com/videogpt/assets/images/style-sai-line-art.webp"
+                },
+                "music": {
+                    "id": "nomusic",
+                    "locale": "en",
+                    "name": "No Music",
+                    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/videogptai-3bb74.appspot.com/o/videogpt%2Fdata%2Fmusic%2Fsilence.mp3?alt=media&token=b8c934e5-5bea-4188-b5ef-fc9ffb108c50",
+                    "rank": 12,
+                    "url": "https://firebasestorage.googleapis.com/v0/b/videogptai-3bb74.appspot.com/o/videogpt%2Fdata%2Fmusic%2Fsilence.mp3?alt=media&token=b8c934e5-5bea-4188-b5ef-fc9ffb108c50"
+                },
+                "caption": {
+                    "id": "white-highlight",
+                    "locale": "en",
+                    "name": "White Highlight",
+                    "rank": 1,
+                    "url": "https://firebasestorage.googleapis.com/v0/b/videogptai-3bb74.appspot.com/o/videogpt%2Fassets%2Fimages%2Fwhite-highlight.webp?alt=media&token=794dd9f3-2f99-418b-a9d6-e57663959925"
+                },
+                "transition": [],
+                "animation": []
+            },
+            {
+                "videoId": "h0yxxrejy2",
+                "templateId": "horrorstory",
+                "voiceId": "30",
+                "styleId": "sai-texture",
+                "createdAt": "2024-07-18T16:09:48.455Z",
+                "previewUrl": "https://preview.videogptai.com/preview/wq0j8UijymNlI3cfqxyrhnsLK6p2/h0yxxrejy2",
+                "state": "DRAFT",
+                "locale": "en",
+                "captionStyleId": "simple",
+                "thumbnail": "https://storage.videogptai.com/videogpt/assets/images/thumbnail-h0yxxrejy2.webp",
+                "musicId": "calm-1",
+                "transitionsIdList": [
+                    "zoomIn"
+                ],
+                "animationsIdList": [
+                    "pan"
+                ],
+                "voice": {
+                    "gender": "male",
+                    "id": 30,
+                    "locale": "en",
+                    "model_id": "en-US",
+                    "name": "James",
+                    "url": "https://storage.videogptai.com/videogpt/data/audio/vfkuf7gr2n0fhy79uqtruznw92m15xym.mp3",
+                    "voice_id": "en-US-Polyglot-1"
+                },
+                "style": {
+                    "id": "sai-texture",
+                    "locale": "en",
+                    "name": "Texture",
+                    "negative_prompt": "ugly, deformed, noisy, blurry",
+                    "prompt": "texture {prompt} top down close-up",
+                    "url": "https://storage.videogptai.com/videogpt/assets/images/style-sai-texture.webp"
+                },
+                "music": {
+                    "id": "calm-1",
+                    "locale": "en",
+                    "name": "Calm",
+                    "url": "https://storage.googleapis.com/jetshorts/data/music/calm.m4a"
+                },
+                "caption": {
+                    "id": "simple",
+                    "locale": "en",
+                    "name": "Simple",
+                    "url": "https://mathiasbynens.be/demo/animated-webp-supported.webp"
+                },
+                "transition": [],
+                "animation": []
+            }
+        ],
+        "offset": "2024-07-15T08:02:03.941Z"
+    }
+}
+```
+</Accordion>
+</AccordionGroup>
+
+This will integrate the library api for the videos user has created with the existing UI.

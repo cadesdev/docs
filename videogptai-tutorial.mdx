@@ -7,6 +7,16 @@ description: 'Step-by-step guide to creating a production-ready mobile app using
 
 Learn how to build a complete, production-ready mobile app using Cades, the world's first AI mobile app developer. This tutorial will walk you through creating VideoGPTAI, a video creation app that's currently live on app stores.
 
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/E4tKZ84PA6U"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
 <Note>
   Before starting, make sure you have a Firebase account and basic understanding of development concepts.
 </Note>
@@ -18,14 +28,16 @@ Learn how to build a complete, production-ready mobile app using Cades, the worl
 First, describe your app idea to Cades and let it generate the initial screens.
 
 <iframe
-  width="560"
+  width="100%"
   height="315"
-  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  src="https://www.youtube.com/embed/bEcuUsLhPww"
   title="YouTube video player"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen
 ></iframe>
+
+
 
 For VideoGPTAI, the following screens were created:
 
@@ -58,9 +70,9 @@ lib/
 </Card>
 
 <iframe
-  width="560"
+  width="100%"
   height="315"
-  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  src="https://www.youtube.com/embed/_AsM44UIIPk"
   title="YouTube video player"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -84,9 +96,9 @@ Configure your app's identity with the following prompt:
 </Note>
 
 <iframe
-  width="560"
+  width="100%"
   height="315"
-  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  src="https://www.youtube.com/embed/yKzrjRHxSmc"
   title="YouTube video player"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -105,9 +117,9 @@ My project package name will be "com.videogptai.android"
 ## Adding Authentication
 
 <iframe
-  width="560"
+  width="100%"
   height="315"
-  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  src="https://www.youtube.com/embed/ECtbRaYAOeE"
   title="YouTube video player"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -156,9 +168,9 @@ In the login page show loading when google sign in is tapped and then when sign 
 Using this prompt We were able to migrate the navigation stack of the project, to better manage any redirections for login checks, we want to protect pages that shouldn't be accessible to user without login
 
 <iframe
-  width="560"
+  width="100%"
   height="315"
-  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  src="https://www.youtube.com/embed/NsJMTzYAULA"
   title="YouTube video player"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -186,9 +198,9 @@ In login screen when login is successful you need to go to the onboarding screen
 ### Step 2: Firebase Configuration
 
 <iframe
-  width="560"
+  width="100%"
   height="315"
-  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  src="https://www.youtube.com/embed/QMScKXX97as"
   title="YouTube video player"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -209,9 +221,9 @@ When prompted, paste your `google-services.json` file contents into the chat.
 Extract the template card in a seperate file for refactor save it in a components folder
 ```
 <iframe
-  width="560"
+  width="100%"
   height="315"
-  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  src="https://www.youtube.com/embed/y6ZyjQg24f8"
   title="YouTube video player"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -224,9 +236,9 @@ Extract the template card in a seperate file for refactor save it in a component
 Let's create a dependency injection folder using get_it package to manage API instances and follow clean architecture principles. This centralized approach helps avoid duplicating API instances across the codebase.
 
 <iframe
-  width="560"
+  width="100%"
   height="315"
-  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
+  src="https://www.youtube.com/embed/_S66lX8d_s0"
   title="YouTube video player"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -240,16 +252,6 @@ in the di folder /injection.dart Use get_it to setup the dependency injection gr
 ### Step 2: API Client Configuration
 
 After setting up Dio and dependency injection, we'll create a centralized API client class to handle all network requests efficiently and maintain clean architecture principles.
-
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
 
 ```bash
 I want to integrate api into the app use retrofit to do the same
@@ -315,22 +317,32 @@ the sample response is as follows
 
 Add authentication to API requests.
 
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/TVRU5ofZ0Ec?si=KvHO7OAxk9qBenKE"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
-
 ```bash
 I want to create a dio interceptor that if logged in it will add the user token in the authorization header for requests as Bearer
 ```
 
 ### Step 5: Second API Integration
 
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/XDYcQk6iv-g"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+<br />
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/9JKJFwMx7YQ"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+<br />
 <AccordionGroup>
 <Accordion title="Library API">
 ```bash
@@ -460,14 +472,6 @@ here is the sample reponse
 
 This will integrate the library api for the videos user has created with the existing UI.
 
-### Step 6: Repeat the same for all APIs
-Repeat the same process to integrate all the APIs.
-<Tip>
-  You can use the same prompt for all the APIs, just change the api url and the sample response.
-</Tip>
-
-Ask Cades to create buttons, pages, sheets, drawers, etc. based on the design you have in mind, and add functionality to them.
-
 ## Adding RevenueCat
 Integrating RevenueCat into your app allows you to manage in-app purchases and subscriptions efficiently.
 
@@ -484,6 +488,46 @@ Integrate subscription functionality:
 Integrate revenue cat in the project, here are the api keys..
 ```
 Continue chatting with Cades to add the subscription flow to the app.
+
+## Customizing UI
+
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/5aJIt9kwfBI"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+## Connect more APIs
+Repeat the same process to integrate all the APIs.
+<Tip>
+  You can use the same prompt for all the APIs, just change the api url and the sample response.
+</Tip>
+
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/ZeullS_n0pk"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+<br />
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/Tu_7h1Ho7vI"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+Ask Cades to create buttons, pages, sheets, drawers, etc. based on the design you have in mind, and add functionality to them.
 
 ## Testing and Deployment
 

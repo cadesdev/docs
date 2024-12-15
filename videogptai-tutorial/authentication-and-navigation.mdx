@@ -1,0 +1,75 @@
+---
+title: 'Authentication and Navigation'
+description: 'Learn how to add authentication and navigation to VideoGPTAI'
+---
+## Adding Authentication
+
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/ECtbRaYAOeE"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+### Step 1: Authentication Setup
+
+Let's install the social_auth_btn_kit package to add pre-styled authentication buttons for a professional look:
+
+```bash
+flutter pub add social_auth_btn_kit
+```
+Now prompt the following to add google sign in functionality:
+
+```bash
+Create a login page for my app, it should have google sign in for now, add the methods in auth service for google sign in
+the login page should have the name of the app in center and then the google sign in button is used from social_auth_btn_kit package add the google sign btn reference
+<example_auth_button>
+SocialAuthBtn.facebook(
+                variant: FacebookTypeVariants.outlined,
+                onPressed: () {
+                  debugPrint("DEBUG: Facebook Btn Pressed");
+                },
+              ),
+<example_auth_button>
+```
+### Step 2: Settings Page
+
+Let's create a settings page, which will display the user's profile information and provide a logout option. This page will be accessible from the home screen and give users control over their account settings.
+
+```bash
+Create a settings page and link it with the home page and give the logout option and show the current user details in the settings page for now
+```
+
+### Step 3: Loading State
+
+Let's create a loading state for the app to provide visual feedback during authentication:
+
+```bash
+In the login page show loading when google sign in is tapped and then when sign in is complete redirect to onboarding page, check logic on main.dart
+```
+
+## Adding go_router Navigation
+
+Using this prompt We were able to migrate the navigation stack of the project, to better manage any redirections for login checks, we want to protect pages that shouldn't be accessible to user without login
+
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/NsJMTzYAULA"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
+```bash
+Integrate go_router package for my app migrate all navigation to go_router
+```
+
+Add a simple redirect logic to the onboarding screen
+```bash
+In login screen when login is successful you need to go to the onboarding screen
+```
