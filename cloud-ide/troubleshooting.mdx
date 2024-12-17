@@ -1,0 +1,34 @@
+Here are the common errors occuring during the alpha ide setup and how to navigate them.
+
+## Generated code error
+Run `flutter pub get` if the project is not compiled and you see red screens.
+Initial code will have some errors related to icon names, you can fix them or remove them and run the project.
+
+
+## Cades Agent showing incorrect api key
+<img src="https://firebasestorage.googleapis.com/v0/b/cades-dev.appspot.com/o/public%2Fide%2Fapi_error.png?alt=media&token=e3a9d27c-1e14-4af0-bf2b-37e42d1fb17d" width="150px" />
+When you log in to the ide for the first time you might see this error, when you first try to press lets go on the cades agent extension.
+To get around this just refresh the page and try again to go through the welcome screen and press let's go. Should be fixed.
+If still facing issues contact for support in the community
+
+## Quitting the Cades server
+Before exiting the server press 'q' on the cades run command to exit the preview hot reload. If unable to run the cades run command again for a different project, contact support.
+Manually killing the server
+
+If you run into the issue when you are unable to run the cades command because it is already running
+<img src="https://firebasestorage.googleapis.com/v0/b/cades-dev.appspot.com/o/public%2Fide%2Falready_running.png?alt=media&token=81ea9d7c-6e79-418e-b1e9-416fc15e8e03" />
+
+- Find the process of the web server
+```
+ps aux | grep "web-server --web-port=8080"
+```
+<img src="https://firebasestorage.googleapis.com/v0/b/cades-dev.appspot.com/o/public%2Fide%2Fkill_command.png?alt=media&token=58beba48-524c-450c-badd-cbd2f52fb256" />
+- Kill the process
+```
+kill -9 pid
+```
+Like in the above example the pid is `110858`
+
+
+## Changes not reflected in the preview
+Press 'r' after running the cades run command to hot reload the changes. You will need to manually press refresh button on the preview screen to see the changes.

@@ -69,7 +69,15 @@
             ]
           }
         ]
-      }
+    },
+    {
+      "group": "Cades Cloud IDE",
+      "pages": [
+        "cloud-ide/introduction",
+        "cloud-ide/troubleshooting"
+      ]
+    }
+      
   ],
   "footerSocials": {
     "website": "https://cades.dev",
