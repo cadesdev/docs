@@ -1,6 +1,9 @@
-# Troubleshooting
-
 Here are the common errors occuring during the alpha ide setup and how to navigate them.
+
+## Generated code error
+Run `flutter pub get` if the project is not compiled and you see red screens.
+Initial code will have some errors related to icon names, you can fix them or remove them and run the project.
+
 
 ## Cades Agent showing incorrect api key
 [images/api_error.png](images/api_error.png)
@@ -10,6 +13,16 @@ If still facing issues contact for support in the community
 
 ## Quitting the Cades server
 Before exiting the server press 'q' on the cades run command to exit the preview hot reload. If unable to run the cades run command again for a different project, contact support.
+Manually killing the server
+- Find the process of the web server
+```
+ps aux | grep "web-server --web-port=8080"
+```
+- Kill the process
+```
+kill -9 pid
+```
+
 
 ## Changes not reflected in the preview
 Press 'r' after running the cades run command to hot reload the changes. You will need to manually press refresh button on the preview screen to see the changes.
