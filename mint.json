@@ -76,8 +76,13 @@
         "cloud-ide/introduction",
         "cloud-ide/troubleshooting"
       ]
+    },
+    {
+      "group": "Publishing",
+      "pages": [
+        "publishing/publishing-to-google-play"
+      ]
     }
-      
   ],
   "footerSocials": {
     "website": "https://cades.dev",
