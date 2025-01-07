@@ -18,12 +18,12 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hello@cades.dev"
+      "url": "mailto:hello@fenado.ai"
     }
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://cades.dev/home"
+    "url": "https://fenado.ai/home"
   },
   "tabs": [
     {
@@ -32,11 +32,6 @@
     }
   ],
   "anchors": [
-    {
-      "name": "Discord",
-      "icon": "gamepad",
-      "url": "https://discord.gg/EQyvdS5gGj"
-    },
     {
       "name": "WhatsApp",
       "icon": "whatsapp",
@@ -49,15 +44,38 @@
       "pages": [
         "welcome",
         "faq",
-        "pricing"
+        "pricing",
+        "welcome-cades"
       ]
     },
     {
-        "group": "User Guide",
+        "group": "Publishing",
+        "pages": [
+          {
+            "icon": "play",
+            "group": "Google Play",
+            "pages": [
+              "publishing/publishing-to-google-play"
+            ]
+          },
+          {
+            "icon": "apple",
+            "group": "App Store",
+            "pages": [
+              "publishing/setting-up-apple-developer-account",
+              "publishing/accept-developer-agreement",
+              "publishing/steps-for-individual-apple-developer-account",
+              "publishing/steps-for-organization-apple-developer-account"
+            ]
+          }
+        ]
+    },
+    {
+        "group": "User Guide (Archived)",
         "pages": [
           {
             "icon": "video",
-            "group": "Building a Complete App - VideoGPTAI",
+            "group": "Building a Complete App - VideoGPTAI (Archived)",
             "pages": [
               "videogptai-tutorial/introduction",
               "videogptai-tutorial/design-and-code-structure",
@@ -71,33 +89,21 @@
         ]
     },
     {
-      "group": "Cades Cloud IDE",
+      "group": "Cades Cloud IDE (Archived)",
       "pages": [
         "cloud-ide/introduction",
         "cloud-ide/troubleshooting"
       ]
-    },
-    {
-      "group": "Publishing",
-      "pages": [
-        "publishing/publishing-to-google-play"
-      ]
     }
   ],
-  "footerSocials": {
-    "website": "https://cades.dev",
-    "x": "https://cades.dev/x",
-    "linkedin": "https://linkedin.com/company/cades-dev",
-    "facebook": "https://www.facebook.com/profile.php?id=61568894284260",
-    "youtube": "https://www.youtube.com/@cades-dev"
-  },
   "footer": {
     "socials": {
-      "website": "https://cades.dev",
-      "x": "https://cades.dev/x",
-      "linkedin": "https://linkedin.com/company/cades-dev",
+      "website": "https://fenado.ai",
+      "x": "https://fenado.ai/x",
+      "linkedin": "https://linkedin.com/company/fenado-ai",
       "facebook": "https://www.facebook.com/profile.php?id=61568894284260",
-      "youtube": "https://www.youtube.com/@cades-dev"
+      "youtube": "https://www.youtube.com/@fenado-ai",
+      "discord": "https://discord.gg/EQyvdS5gGj"
     },
     "links": [
         {
@@ -105,11 +111,11 @@
             "links": [
               {
                 "label": "Privacy Policy",
-                "url": "https://cades.dev/privacy"
+                "url": "https://fenado.ai/privacy"
               },
               {
                 "label": "Terms of Service",
-                "url": "https://cades.dev/terms"
+                "url": "https://fenado.ai/terms"
               }
             ]
         }
